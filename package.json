@@ -1,0 +1,41 @@
+{
+  "name": "formio-red",
+  "version": "0.0.1",
+  "description": "Form.io Node Red Integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formio/formio-red.git"
+  },
+  "keywords": [
+    "node-red",
+    "form.io",
+    "node.js"
+  ],
+  "contributors": [
+    {"name": "Travis Tidwell <travis@form.io>"}
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/formio/formio-red/issues"
+  },
+  "node-red": {
+    "nodes": {
+      "formio": "formio.js",
+      "formio save": "formio-save.js",
+      "formio in": "formio-in.js"
+    }
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "homepage": "https://github.com/formio/formio-red#readme",
+  "dependencies": {
+    "basic-auth-connect": "^1.0.0",
+    "body-parser": "1.15.2",
+    "formio-service": "^1.2.1"
+  }
+}

@@ -1,0 +1,27 @@
+<script type="text/javascript">
+  RED.nodes.registerType('formio save', {
+    category: 'storage-output',
+    color: "rgb(218, 196, 180)",
+    defaults: {
+      formio: {type: "formio", required: true},
+      form: {value: "", required: true}
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function() {
+      var formio = RED.nodes.node(this.formio);
+      return this.name || (formio ? formio.label() + "/" + this.form: "Save Form");
+    }
+  });
+</script>
+<script type="text/x-red" data-template-name="formio save">
+    <div class="form-row">
+        <label for="node-input-formio"><i class="fa fa-th"></i> Project</label>
+        <input type="text" id="node-input-formio">
+    </div>
+    <div class="form-row">
+        <label for="node-input-form"><i class="fa fa-tasks"></i> Form Path</label>
+        <input type="text" id="node-input-form">
+    </div>
+</script>
+<script type="text/x-red" data-help-name="formio save"></script>
