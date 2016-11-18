@@ -18,7 +18,7 @@ You will now have two nodes to pick from.
  - **formio save** (storage): This will save a new form submission.
  - **formio** (input): This will receive a Form.io form webhook to use forms as input.
 
-**Important Note**: When using the Form.io input node, you must provide the Basic Authentication settings of your Form.io Webhook settings. These should be configured as follows.
+**Important Note**: When using the Form.io input node, you must provide the following Authentication settings in your Form.io Webhook Action settings. These should be configured as follows.
 
  - ***Authorize User***:  admin
  - ***Authorize Password***:  [YOUR PROJECT API KEY]
