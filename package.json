@@ -29,6 +29,11 @@
       "formio in": "formio-in.js"
     }
   },
+  "keywords": [
+    "formio",
+    "form.io",
+    "node-red"
+  ],
   "engines": {
     "node": ">=0.10"
   },
