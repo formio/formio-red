@@ -1,0 +1,34 @@
+<script type="text/javascript">
+  RED.nodes.registerType('formio get', {
+    category: 'storage-output',
+    color:"#c0edc0",
+    defaults: {
+      formio: {type: "formio", required: true},
+      form: {value: "", required: true}
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function() {
+      var formio = RED.nodes.node(this.formio);
+      return this.name || (formio ? formio.label() + "/" + this.form: "Get Submissions");
+    }
+  });
+</script>
+<script type="text/x-red" data-template-name="formio get">
+    <div class="form-row">
+        <label for="node-input-formio"><i class="fa fa-th"></i> Project</label>
+        <input type="text" id="node-input-formio">
+    </div>
+    <div class="form-row">
+        <label for="node-input-form"><i class="fa fa-tasks"></i> Form Path</label>
+        <input type="text" id="node-input-form">
+    </div>
+</script>
+<script type="text/x-red" data-help-name="formio get">
+  <p>Retrieves submissions from a form within Form.io</p>
+  <h3>Input</h3>
+  <p>In order to filter which submissions are retrieved, you must use the query provided a <code>msg.query</code> within the message object.</p>
+  <p>The contents of <code>msg.query</code> should be a standard <a href="https://docs.mongodb.com/v3.2/reference/method/db.collection.find/">MongoDB Find Query</a>.</p>
+  <h3>Output</h3>
+  <p>Once the submissions have been retrieved, they are then added to the <code>msg.submissions</code> object.</p>
+</script>

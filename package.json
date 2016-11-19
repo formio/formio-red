@@ -1,6 +1,6 @@
 {
   "name": "formio-red",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Form.io Node Red Integration",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,8 @@
     "nodes": {
       "formio": "formio.js",
       "formio save": "formio-save.js",
-      "formio in": "formio-in.js"
+      "formio in": "formio-in.js",
+      "formio get": "formio-get.js"
     }
   },
   "keywords": [

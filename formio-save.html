@@ -1,7 +1,7 @@
 <script type="text/javascript">
   RED.nodes.registerType('formio save', {
     category: 'storage-output',
-    color: "rgb(218, 196, 180)",
+    color:"#c0edc0",
     defaults: {
       formio: {type: "formio", required: true},
       form: {value: "", required: true}
@@ -24,4 +24,21 @@
         <input type="text" id="node-input-form">
     </div>
 </script>
-<script type="text/x-red" data-help-name="formio save"></script>
+<script type="text/x-red" data-help-name="formio save">
+  <p>Saves a new form submission within Form.io</p>
+  <h3>Input</h3>
+  <p>This node will save a new record within a Form.io form using the <code>msg.payload</code> being the body sent to create the new submission.</p>
+  <p>The <code>msg.payload</code> should resemble the following structure, which will map to the fields within a Form.io form. This structure could be accomplished within a <strong>function</strong> node.</p>
+  <pre><code>
+msg.payload = {
+  data: {
+    firstName: 'Joe',
+    lastName: 'Smith',
+    email: 'joe@example.com'
+  }
+}
+return msg;
+  </code></pre>
+  <h3>Output</h3>
+  <p>Once executed, the result of the saved submission will then be output to the <code>msg.submission</code> object for any downstream nodes to utilize the full submission object that was saved to Form.io</p>
+</script>

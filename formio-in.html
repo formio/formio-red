@@ -1,7 +1,7 @@
 <script type="text/javascript">
-  RED.nodes.registerType('formio in', {
+  RED.nodes.registerType('form_io in', {
     category: 'input',
-    color: "rgb(218, 196, 180)",
+    color:"#c0edc0",
     defaults: {
       formio: {type: "formio", required: true},
       path: {value:"form",required:true},
@@ -20,14 +20,14 @@
         } else {
           root += this.path;
         }
-        return "Form.io ["+this.method+"] "+root;
+        return "Form ["+this.method+"] "+root;
       } else {
         return "Form.io Form";
       }
     }
   });
 </script>
-<script type="text/x-red" data-template-name="formio in">
+<script type="text/x-red" data-template-name="form_io in">
     <div class="form-row">
         <label for="node-input-formio"><i class="fa fa-th"></i> Project</label>
         <input type="text" id="node-input-formio">
@@ -46,4 +46,20 @@
         <input id="node-input-path" type="text" placeholder="/url">
     </div>
 </script>
-<script type="text/x-red" data-help-name="formio in"></script>
+<script type="text/x-red" data-help-name="form_io in">
+  <p>Triggers an input when a Form is submitted within Form.io.</p>
+  <p>This uses the Form.io <strong>Webhook</strong> system where a new webhook is fired for any new submissions within Form.io. For more information on how to configure your Webhook actions, see our <a href="https://help.form.io/userguide/#action-webhook">Help Documentation</a></p>
+  <p>In order to trigger this input, you must first select the <strong>Project</strong> that this form is being received from. This will use the <strong>API Key</strong> of that project to create the Basic Authentication around the endpoints provided from this trigger to allow for secure communication to this form trigger. You will need to create an <strong>API Key</strong> for your project in order to use this trigger node.</p>
+  <p>Once you have an API Key for your project, you will now create a new form, and then attach a <strong>Webhook</strong> action to that form. You will then need to provide the following settings for that webhook.</p>
+  <ul>
+    <li>Webhook URL: <strong>http://[NODE_RED_URL]/[PATH]</strong></li>
+    <li>Authorize User: <strong>admin</strong></li>
+    <li>Authorize Password: <strong>[PROJECT_API_KEY]</strong></li>
+  </ul>
+  <p>In the following settings you will make the following replacements.</p>
+  <ul>
+    <li>NODE_RED_URL - The URL to your Node Red instance (including the port)</li>
+    <li>PATH - The path of the form as configured in this node.</li>
+    <li>PROJECT_API_KEY - The API Key of your project on Form.io</li>
+  </ul>
+</script>

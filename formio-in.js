@@ -63,5 +63,5 @@ module.exports = function(RED) {
       this.errorHandler.bind(this)
     );
   }
-  RED.nodes.registerType("formio in", FormioIn);
+  RED.nodes.registerType("form_io in", FormioIn);
 };
