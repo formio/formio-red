@@ -6,11 +6,12 @@
       formio: {type: "formio", required: true},
       form: {value: "", required: true}
     },
+    icon: 'arrow-in.png',
     inputs: 1,
     outputs: 1,
     label: function() {
       var formio = RED.nodes.node(this.formio);
-      return this.name || (formio ? formio.label() + "/" + this.form: "Save Form");
+      return (formio ? 'SAVE ' + formio.label() + "/" + this.form: "Save Form");
     }
   });
 </script>
