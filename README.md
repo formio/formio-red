@@ -1,10 +1,10 @@
-Form.io integration with Node Red
+Form.io integration with Node-RED
 =================================
-This provides a few nodes which makes working with the Form.io platform within Node Red much easier.
+This provides a few nodes which makes working with the Form.io platform within Node-RED much easier.
 
 Installation
 ------------------
-You must first install Node Red and have it running locally to use this. Go to http://nodered.org/ to learn more.
+You must first install Node-RED and have it running locally to use this. Go to http://nodered.org/ to learn more.
 
 Once you have this running, change directory to your ```.node-red``` folder, and then type the following.
 
