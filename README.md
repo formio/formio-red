@@ -1,3 +1,12 @@
+### This repository is now considered legacy and no longer supported. Please take a look at our recent repositories and help documentation at the following links.
+
+ - https://help.form.io
+ - https://github.com/formio/formio.js
+ - https://github.com/formio/formio
+ - https://github.com/formio/react
+ - https://github.com/formio/angular
+ - https://github.com/formio/vue
+
 Form.io integration with Node Red
 =================================
 This provides a few nodes which makes working with the Form.io platform within Node Red much easier.
